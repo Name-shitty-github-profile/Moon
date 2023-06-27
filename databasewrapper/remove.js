@@ -1,4 +1,8 @@
 const fs = require('fs');
+const search = require('./search');
 module.exports = function(path) {
-    fs.unlink("database/" + path + '.json', (err) => {});
+    const file = `database/${path}.json`;
+    if (!search(file)) return;
+    fs.unlink(file, (err) => {});
+    return true;
 }
