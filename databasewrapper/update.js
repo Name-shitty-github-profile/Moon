@@ -3,7 +3,7 @@ const search = require('./search');
 const add = require('./add');
 
 module.exports = function(path, newContent) {
-    path = `database/${path}.json`;
+    path = `${process.cwd()}/database/${path}.json`;
     if (!search(path)) {
         add(path, newContent);
         return true;

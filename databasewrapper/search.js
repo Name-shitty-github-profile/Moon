@@ -1,4 +1,4 @@
 const fs = require('fs');
 module.exports = function(path) {
-    return fs.existsSync(`database/${path}.json`);
+    return fs.existsSync(`${process.cwd()}/database/${path}.json`);
 }
