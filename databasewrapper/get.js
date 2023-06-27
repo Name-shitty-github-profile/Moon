@@ -1,7 +1,7 @@
 const search = require('./search'),
     fs = require('fs');
 module.exports = function(path) {
-    path = `${process.cwd()}/database/${path}.json`;
+    const file = `${process.cwd()}/database/${path}.json`;
     if (!search(path)) {
         return;
     }

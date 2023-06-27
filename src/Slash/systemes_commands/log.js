@@ -2,7 +2,7 @@ const {
     PermissionsBitField,
     ApplicationCommandOptionType
 } = require('discord.js');
-const update = require(`${process.cwd()}/databasewrapper/add`);
+const update = require(`${process.cwd()}/databasewrapper/update`);
 module.exports = {
     name: "salon_de_log",
     description: "Le salon de log",

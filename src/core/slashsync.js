@@ -12,6 +12,5 @@ module.exports = async (client, commands, options = {
         await client.application.commands.create(newCommand);
     }
     console.log(`Created ${newCommands.length} commands!`);
-    
     console.log(`Commands synchronized!`);
 };
