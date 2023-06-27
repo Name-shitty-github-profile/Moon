@@ -3,11 +3,11 @@ const search = require('./search'),
 module.exports = function(path) {
     path = `database/${path}.json`;
     if (!search(path)) {
-        return null;
+        return;
     }
     try {
-        return JSON.parse(Buffer.from(encodedContent, 'base64').toString('utf8'));
+        return JSON.parse(Buffer.from(fs.readFileSync(path, 'utf8'), 'base64').toString('utf8'));
     } catch (error) {
-        return null;
+        return;
     }
 };
