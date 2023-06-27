@@ -5,6 +5,7 @@ const add = require('./add');
 module.exports = function(path, newContent) {
     path = `database/${path}.json`;
     if (!search(path)) {
+        add(path, newContent);
         return true;
     }
     try {
