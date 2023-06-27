@@ -26,8 +26,15 @@ module.exports = {
         }
         const status = interaction.options.getBoolean('actif');
         const file = `antispam/${interaction.guild.id}`;
+        if (status === null) {
+            if (search(file)) {
+                status = false;
+            } else {
+                status = true;
+            }
+        }
         if (status) {
-            add(file, true);
+            add(file, {status: true});
             let embed = new EmbedBuilder()
                 .setTitle("Antispam")
                 .setColor("#00FF00")
@@ -51,4 +58,4 @@ module.exports = {
                 .setTimestamp();
             await interaction.reply({ embeds: [embed]});
     }
-}
+};

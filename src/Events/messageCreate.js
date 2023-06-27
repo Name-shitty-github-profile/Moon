@@ -1,5 +1,5 @@
 const { PermissionsBitField } = require('discord.js');
-const get = require("../databasewrapper/get");
+const search = require("../databasewrapper/search");
 const send = require('../logger/send');
 const wait = require('../../utils/wait');
 let cache = Map();
@@ -15,7 +15,7 @@ async function catch_worker() {
 async function antilink(client, message) {
     const cont = `antilink/${message.guild.id}`;
     if (!cache.get(cont)) {
-        if (!get(cont)) return;
+        if (!search(cont)) return;
         cache.set(cont, true);
     }
     if (message.member.permissions.has(PermissionsBitField.Flags.Administrator)) return;
@@ -32,7 +32,7 @@ let spam = Map();
 async function antispam(client, message) {
     let cont = `antispam/${message.guild.id}`;
     if (!cache.get(cont)) {
-        if (!get(cont)) return;
+        if (!search(cont)) return;
         cache.set(cont, true);
     }
     let payload = spam.get(`${message.guild.id}/${message.author.id}`);

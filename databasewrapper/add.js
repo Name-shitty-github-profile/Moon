@@ -2,12 +2,12 @@ const fs = require('fs');
 const search = require('./search');
 
 module.exports = function(path, content) {
-    path = "database/" + path + '.json';
+    path = `database/${path}.json`;
     if (search(path)) {
         return false;
     }
     try {
-        fs.writeFileSync(path, JSON.stringify(content));
+        fs.writeFileSync(path, Buffer.from(content).toString('base64'));
     } catch (e) {
         return false;
     }

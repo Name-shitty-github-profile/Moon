@@ -3,12 +3,12 @@ const search = require('./search');
 const add = require('./add');
 
 module.exports = function(path, newContent) {
-    path = "database/" + path + '.json';
+    path = `database/${path}.json`;
     if (!search(path)) {
         return true;
     }
     try {
-        fs.writeFileSync(path, newContent, { flag: 'w' });
+        fs.writeFileSync(path, Buffer.from(JSON.stringify(content)).toString('base64'), { flag: 'w' });
         return true;
     } catch (e) {
         return false;

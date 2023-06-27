@@ -27,7 +27,7 @@ module.exports = {
         const status = interaction.options.getBoolean('actif');
         const file = `antilink/${interaction.guild.id}`;
         if (status) {
-            add(file, true);
+            add(file, {status: true});
             let embed = new EmbedBuilder()
                 .setTitle("Antilink")
                 .setColor("#00FF00")
@@ -51,4 +51,4 @@ module.exports = {
                 .setTimestamp();
             await interaction.reply({ embeds: [embed]});
     }
-}
+};
