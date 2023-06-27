@@ -44,6 +44,7 @@ module.exports = {
                 .setDescription("Le système antilink est maintenant actif ! ✅")
                 .setTimestamp();
             await interaction.reply({ embeds: [embed]});
+            return;
         }
         remove(file);
         let embed = new EmbedBuilder()

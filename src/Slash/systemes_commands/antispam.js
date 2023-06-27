@@ -43,6 +43,7 @@ module.exports = {
                 .setDescription("Le système antispam est maintenant actif ! ✅")
                 .setTimestamp();
             await interaction.reply({ embeds: [embed]});
+            return;
         }
         remove(file);
         let embed = new EmbedBuilder()
