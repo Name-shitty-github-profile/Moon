@@ -5,4 +5,4 @@ module.exports = function(path) {
     if (!search(path)) return;
     fs.unlink(file, (err) => {});
     return true;
-}
+} 
