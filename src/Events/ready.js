@@ -24,5 +24,5 @@ module.exports = async (client) => {
         ];
         client.user.setPresence({ activities: [{ name: possible_status[Math.floor(Math.random() * possible_status.length)], type: ActivityType.Watching }] });
     }
-    await setInterval(Status, 80_000);
+    setInterval(Status, 80_000);
 };
