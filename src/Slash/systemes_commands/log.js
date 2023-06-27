@@ -19,8 +19,9 @@ module.exports = {
             await interaction.reply({ content: "Tu n'as pas la permissions pour performer cette action.", ephemeral: true});
             return;
         }
-        const channel_id = interaction.options.getChannel("salon");
-        update(`log_channel/${interaction.guild.id}`, { id: channel_id});
-        await interaction.reply(`Le salon de log est maintenant <#${channel_id}>!`);
+        const channel = interaction.options.getChannel("salon");
+        update(`log_channel/${interaction.guild.id}`, { id: channel.id});
+        await channel.send("Ici!")
+        await interaction.reply(`Le salon de log est maintenant ${channel}!`);
     }
 };
