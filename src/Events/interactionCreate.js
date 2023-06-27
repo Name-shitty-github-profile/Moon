@@ -8,6 +8,9 @@ module.exports = async (client, interaction) => {
     } catch (e) {
         try {
             await interaction.reply({content: "something went wrong!", ephemeral: true});
-        } catch (e) {}
+            console.log(e);
+        } catch (e) {
+            console.log(e);
+        }
     }
 };

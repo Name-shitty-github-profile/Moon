@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require('path');
 
 function getSlashs(folderPath) {
   let files = [];
@@ -19,11 +20,10 @@ function getSlashs(folderPath) {
 }
 
 module.exports = async (client) => {
-  const slash_commands = getSlashs(`${process.cwd()}../ Slash`);
+  const slash_commands = getSlashs(`${process.cwd()}/src/Slash`);
   slash_commands.forEach(command => {
-    const props = require(`${__dirname}/../Slash/${category}/${file}`);
-    const command = file.split(".")[0];
-    client.interactions.set(command, { name: command, ...props });
+    const props = require(command);
+    client.interactions.set(props.name, { ...props });
     client.register_arr.push(props);
   });
 };

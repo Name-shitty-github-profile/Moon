@@ -1,8 +1,8 @@
 const { PermissionsBitField } = require('discord.js');
-const search = require("../databasewrapper/search");
+const search = require(`${process.cwd()}/databasewrapper/search`);
 const send = require('../logger/send');
 const wait = require('../../utils/wait');
-let cache = Map();
+let cache = new Map();
 let catfetch = false;
 async function catch_worker() {
     if (catfetch) return;
@@ -28,7 +28,7 @@ async function antilink(client, message) {
         }
     }
 }
-let spam = Map();
+let spam = new Map();
 async function antispam(client, message) {
     let cont = `antispam/${message.guild.id}`;
     if (!cache.get(cont)) {
