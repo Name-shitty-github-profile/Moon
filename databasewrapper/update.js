@@ -8,7 +8,7 @@ module.exports = function(path, newContent) {
         return true;
     }
     try {
-        fs.writeFileSync(path, Buffer.from(JSON.stringify(content)).toString('base64'), { flag: 'w' });
+        fs.writeFileSync(path, Buffer.from(JSON.stringify(newContent)).toString('base64'), { flag: 'w' });
         return true;
     } catch (e) {
         return false;
