@@ -6,7 +6,7 @@ module.exports = function(path) {
         return;
     }
     try {
-        return JSON.parse(Buffer.from(fs.readFileSync(path, 'utf8'), 'base64').toString('utf8'));
+        return JSON.parse(Buffer.from(fs.readFileSync(file, 'utf8'), 'base64').toString('utf8'));
     } catch (error) {
         return;
     }

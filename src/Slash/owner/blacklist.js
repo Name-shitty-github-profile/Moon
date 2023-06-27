@@ -16,7 +16,7 @@ module.exports = {
         }
     ],
     func: async (client, interaction) => {
-        if (!owners.has(interaction.member.id)) {
+        if (!owners.includes(interaction.user.id)) {
             await interaction.reply({ content: "Tu n'as pas la permissions pour performer cette action.", ephemeral: true});
             return;
         }
