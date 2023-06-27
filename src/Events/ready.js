@@ -22,7 +22,7 @@ module.exports = async (client) => {
             'How to train your dragon 3',
             'What tatoo my owner could get'
         ];
-        client.user.setPresence({ activities: [{ name: status[Math.floor(Math.random() * possible_status.length)], type: ActivityType.Watching }] });
+        client.user.setPresence({ activities: [{ name: possible_status[Math.floor(Math.random() * possible_status.length)], type: ActivityType.Watching }] });
     }
     await setInterval(Status, 80_000);
 };
