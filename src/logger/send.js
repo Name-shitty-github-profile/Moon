@@ -1,9 +1,9 @@
 const get = require('../../databasewrapper/get');
-const { Client, Collection, EmbedBuilder, PermissionsBitField } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 module.exports = async function(client, guild, event, content) {
     const someinfo = get(`log_channel/${guild.id}`)
     if (!someinfo) return;
-    let Msgchannel = client.channels.cache.get(someinfo);
+    let Msgchannel = client.channels.cache.get(someinfo.id);
     if (!Msgchannel) return;
     let logsEmbed = new EmbedBuilder()
             .setTitle(event)
