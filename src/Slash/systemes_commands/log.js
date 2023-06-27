@@ -1,11 +1,10 @@
 const {
-    EmbedBuilder,
     PermissionsBitField,
     ApplicationCommandOptionType
 } = require('discord.js');
 const update = require(`${process.cwd()}/databasewrapper/add`);
 module.exports = {
-    name: "log",
+    name: "salon_de_log",
     description: "Le salon de log",
     options: [
         {
@@ -22,7 +21,6 @@ module.exports = {
         }
         const channel_id = interaction.options.getChannel("salon");
         update(`log_channel/${interaction.guild.id}`, { id: channel_id});
-        await client.channels.cache.get(channel_id).send("Ici!");
         await interaction.reply(`Le salon de log est maintenant <#${channel_id}>!`);
     }
 };
