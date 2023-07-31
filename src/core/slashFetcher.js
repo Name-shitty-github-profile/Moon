@@ -27,24 +27,3 @@ module.exports = async (client) => {
     client.register_arr.push(props);
   });
 };
-
-/*
-Basic command structure
-module.exports = {
-  description: "uwu",
-  options: [
-    {
-      name: "Kitten",
-      description: "Your discord kitten name",
-      required: true,
-      choices: [
-        { name: "winky wittle kitten", value: "prostitute n.1"},
-        { name: "Bisexual kitten", value: "prositute n.2"}
-      ]
-    }
-  ],
-  func: async (client, interaction) => {
-    interaction.reply(`The big daddy choosed the ${interaction.options.getString("Kitten")}`);
-  }
-};
-*/
